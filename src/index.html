@@ -1,59 +1,60 @@
-   <!-- Header Section -->
-   <header class="header">
-    <div class="header-container">
-      <!-- Search and Navigation Buttons -->
-      <div class="header-top">
-        <!-- Search Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmoteka Header</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <!-- Top Buttons -->
+      <div class="top-buttons">
+        <!-- Movie Search Form -->
         <form class="header-search-form">
           <div class="search-form">
             <input
               type="text"
-              name="search"
-              class="form-input"
+              id="movie-search"
+              class="search-input"
               placeholder="Movie search"
-              id="movie-search-input"
             />
             <button type="submit" id="icon-search" class="search-btn">
-              <span class="search-icon">🔍</span>
+              <svg class="icon icon-search" width="32" height="32">
+                <use xlink:href="icons.svg#icon-search"></use>
+              </svg>
             </button>
           </div>
         </form>
 
-        <!-- Navigation Buttons -->
-        <button id="icon-home" class="nav-btn">Home</button>
-        <button id="icon-library" class="nav-btn">My Library</button>
+        <!-- Home Button -->
+        <button id="icon-home" class="nav-btn">
+          <svg class="icon icon-home" width="32" height="32">
+            <use xlink:href="icons.svg#icon-home"></use>
+          </svg>
+        </button>
+
+        <!-- Library Button -->
+        <button id="icon-library" class="nav-btn">
+          <svg class="icon icon-library" width="32" height="32">
+            <use xlink:href="icons.svg#icon-library"></use>
+          </svg>
+        </button>
       </div>
 
-      <!-- Footer with Logo and Title -->
-      <div class="header-bottom">
-        <div class="logo">
-          <svg id="icon-film" width="59" height="59">
-            <!-- Placeholder SVG -->
-            <circle cx="29.5" cy="29.5" r="29.5" fill="#000"></circle>
-          </svg>
-          <span class="logo-title">Filmoteka</span>
-        </div>
+      <!-- Logo and Title -->
+      <div class="logo-container">
+        <!-- Inline SVG for Film Icon -->
+        <svg class="icon icon-film" width="32" height="32">
+          <use xlink:href="icons.svg#icon-film"></use>
+        </svg>
+        <h1 class="logo-text">Filmoteka</h1>
       </div>
     </div>
   </header>
 
-  <script>
-    const inputField = document.getElementById("movie-search-input");
-    const form = document.querySelector(".header-search-form");
-
-    // Make placeholder text disappear on focus
-    inputField.addEventListener("focus", () => {
-      inputField.placeholder = "";
-    });
-
-    inputField.addEventListener("blur", () => {
-      inputField.placeholder = "Movie search";
-    });
-
-    // Simple search action placeholder
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const query = inputField.value.trim();
-      alert(`Searching for: ${query}`);
-    });
-  </script>
+  <script src="script.js"></script>
+</body>
+</html>
